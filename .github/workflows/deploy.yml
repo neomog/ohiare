@@ -1,43 +1,26 @@
-name: Deploy via FTP to Ohiare.com
+name: Deploy to Namecheap cPanel (FTP)
 
 on:
   push:
-    branches: [ main, master ]
-  workflow_dispatch:
+    branches:
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: List files
-        run: ls -la
-
-      - name: FTP Deploy
+      - name: Deploy to FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.FTP_PORT || '22' }}
-          protocol: sftp 
+          protocol: ftps
+          port: 21
           local-dir: ./
-          server-dir: ${{ secrets.FTP_REMOTE_DIR || '/public_html/' }}
-          exclude: |
-            **/.git*
-            **/.github/*
-            **/.gitignore
-            **/README.md
-            **/LICENSE
-            **/node_modules/*
-            **/*.yml
-            **/*.yaml
-            .editorconfig
-
-      - name: Deployment Notification
-        run: |
-          echo "🚀 Deployment completed via FTP!"
-          echo "🌐 Visit: https://${{ secrets.DOMAIN || 'ohiare.com' }}"
+          server-dir: public_html/
+          dangerous-clean-slate: false
