@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ohiare Nathaniel – Software Engineer | OTA, Hospitality & E-commerce Platforms</title>
+    <meta name="description" content="Portfolio of Ohiare Nathaniel, Software Engineer specializing in hospitality technology, OTA platform development, channel manager integrations, e-commerce platforms, and technical consulting." />
+    <meta property="og:title" content="Ohiare Nathaniel – Software Engineer" />
+    <meta property="og:description" content="Specialist in OTA & hospitality platforms, channel manager integrations, and e-commerce systems." />
+    <meta property="og:type" content="website" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #0f172a;
+            --primary-light: #1e293b;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+            --gray-light: #f1f5f9;
+            --white: #ffffff;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--primary);
+            line-height: 1.6;
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Hero */
+        header {
+            padding: 100px 0 80px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .highlight {
+            color: var(--accent);
+            position: relative;
+            display: inline-block;
+        }
+
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: rgba(59, 130, 246, 0.2);
+            z-index: -1;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+            color: var(--gray);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            background-color: rgba(59, 130, 246, 0.1);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.125rem;
+        }
+
+        /* Grid & Cards */
+        .grid {
+            display: grid;
+            gap: 30px;
+        }
+
+        .grid-two {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-three {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        .card {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            padding: 32px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            border: 1px solid var(--gray-light);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(59, 130, 246, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        /* Tags */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: var(--gray-light);
+            color: var(--primary);
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .tag:hover {
+            background-color: var(--accent);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Contact */
+        #contact {
+            background-color: var(--gray-light);
+            border-radius: var(--radius);
+            margin: 40px;
+            padding: 60px;
+        }
+
+        .contact-content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 12px 24px;
+            background-color: var(--white);
+            border-radius: var(--radius);
+            transition: var(--transition);
+            border: 1px solid var(--gray-light);
+        }
+
+        .contact-link:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: var(--white);
+            font-size: 1.25rem;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+
+            #contact {
+                margin: 20px;
+                padding: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.3rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .section-header h2 {
+                font-size: 1.9rem;
+            }
+
+            .grid-two {
+                grid-template-columns: 1fr;
+            }
+
+            #contact {
+                margin: 10px;
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.9rem;
+            }
+
+            .card {
+                padding: 24px;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-link {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+
+            #contact {
+                margin: 20px;
+                padding: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.3rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .section-header h2 {
+                font-size: 1.9rem;
+            }
+
+            .grid-two {
+                grid-template-columns: 1fr;
+            }
+
+            #contact {
+                margin: 10px;
+                padding: 30px 20px;
+            }
+
+            /* Mobile Navigation */
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary);
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: var(--transition);
+                z-index: 999;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                visibility: hidden;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-links a {
+                padding: 12px 20px;
+                border-radius: var(--radius);
+                text-align: center;
+                background-color: rgba(255, 255, 255, 0.05);
+            }
+
+            .nav-links a:hover {
+                background-color: rgba(59, 130, 246, 0.2);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.9rem;
+            }
+
+            .card {
+                padding: 24px;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-link {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .nav-links {
+                top: 65px;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+    </style>
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Ohiare Nathaniel",
+            "jobTitle": "Software Engineer",
+            "url": "https://yourportfolio.com",
+            "sameAs": [
+                "https://linkedin.com/in/yourprofile",
+                "https://github.com/yourprofile"
+            ],
+            "knowsAbout": ["Hospitality Technology", "OTA Platforms", "Channel Manager Integrations", "E-commerce Platforms", "Technology Consulting"]
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Ohiare<span>.</span></a>
+            <div class="nav-links" id="navLinks">
+                <a href="#expertise">Expertise</a>
+                <a href="#projects">Projects</a>
+                <a href="#tech">Tech Stack</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+<header>
+    <div class="container">
+        <div class="hero-content">
+            <h1>Building <span class="highlight">Scalable Platforms</span> for Hospitality & E-commerce</h1>
+            <p>I design and build high-performance systems that power hotels, booking platforms, online travel agencies, and e-commerce businesses. Focused on automation, revenue optimization, and seamless integrations.</p>
+            <div class="btn-group">
+                <a href="#contact" class="btn btn-primary animate">
+                    <i class="fas fa-paper-plane"></i> Hire Me / Consultation
+                </a>
+                <a href="#projects" class="btn btn-outline animate delay-1">
+                    <i class="fas fa-code"></i> View Projects
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section>
+    <div class="container">
+        <div class="section-header animate">
+            <h2>What I Do</h2>
+            <p>I transform complex business requirements into elegant, scalable technical solutions that drive growth and efficiency in the hospitality and e-commerce sectors.</p>
+        </div>
+    </div>
+</section>
+
+<section id="expertise">
+    <div class="container">
+        <div class="section-header animate">
+            <h2>Core Expertise</h2>
+            <p>Specialized in building and integrating systems that power modern digital businesses</p>
+        </div>
+
+        <div class="grid grid-two">
+            <div class="card animate delay-1">
+                <div class="card-icon">
+                    <i class="fas fa-hotel"></i>
+                </div>
+                <h3>Hospitality & OTA Platforms</h3>
+                <p>Complete reservation engines, property management systems, multi-property support, dynamic rate management, and real-time inventory control.</p>
+            </div>
+
+            <div class="card animate delay-2">
+                <div class="card-icon">
+                    <i class="fas fa-exchange-alt"></i>
+                </div>
+                <h3>Channel Manager Integrations</h3>
+                <p>Seamless integration with Booking.com, Expedia, Airbnb, and other major OTAs with automated sync of availability, pricing, and booking data.</p>
+            </div>
+
+            <div class="card animate delay-1">
+                <div class="card-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <h3>E-commerce Platforms</h3>
+                <p>Full-stack development of online stores, payment gateways, subscription systems, vendor marketplaces, and transaction analytics dashboards.</p>
+            </div>
+
+            <div class="card animate delay-2">
+                <div class="card-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Consulting & Architecture</h3>
+                <p>Product strategy, technology roadmaps, system design, team mentoring, performance optimization, and digital transformation guidance.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <div class="container">
+        <div class="section-header animate">
+            <h2>Highlighted Projects</h2>
+            <p>Real-world solutions delivered for clients in hospitality and e-commerce</p>
+        </div>
+
+        <div class="grid grid-two">
+            <div class="card animate delay-1">
+                <h3>Hospitality Booking Platform</h3>
+                <p>Multi-hotel booking engine with real-time channel manager synchronization, automated rate control, and a modern admin dashboard for property managers.</p>
+                <div class="tags">
+                    <span class="tag">Laravel</span>
+                    <span class="tag">React</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">Redis</span>
+                </div>
+            </div>
+
+            <div class="card animate delay-2">
+                <h3>OTA Integration Service</h3>
+                <p>Middleware service that connects property management systems to multiple travel channels with automated two-way sync, webhook handling, and error recovery.</p>
+                <div class="tags">
+                    <span class="tag">Node.js</span>
+                    <span class="tag">TypeScript</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">RabbitMQ</span>
+                </div>
+            </div>
+
+            <div class="card animate delay-1">
+                <h3>E-commerce Marketplace</h3>
+                <p>Scalable marketplace with vendor onboarding, wallet system, multi-vendor product management, and real-time transaction analytics.</p>
+                <div class="tags">
+                    <span class="tag">Next.js</span>
+                    <span class="tag">Node.js</span>
+                    <span class="tag">MongoDB</span>
+                    <span class="tag">Stripe</span>
+                </div>
+            </div>
+
+            <div class="card animate delay-2">
+                <h3>Consulting Engagements</h3>
+                <p>Advised startups and established hotels on system architecture, digital transformation roadmaps, and platform scalability strategies.</p>
+                <div class="tags">
+                    <span class="tag">Architecture</span>
+                    <span class="tag">Strategy</span>
+                    <span class="tag">Scalability</span>
+                    <span class="tag">Mentoring</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="tech">
+    <div class="container">
+        <div class="section-header animate">
+            <h2>Tech Stack</h2>
+            <p>Technologies and tools I work with to build robust solutions</p>
+        </div>
+
+        <div class="tags" style="justify-content: center;">
+            <span class="tag animate">PHP / Laravel</span>
+            <span class="tag animate delay-1">Node.js</span>
+            <span class="tag animate delay-2">TypeScript</span>
+            <span class="tag animate">MySQL / PostgreSQL</span>
+            <span class="tag animate delay-1">REST & GraphQL APIs</span>
+            <span class="tag animate delay-2">React / Next.js</span>
+            <span class="tag animate">AWS / DigitalOcean</span>
+            <span class="tag animate delay-1">Docker</span>
+            <span class="tag animate delay-2">Redis</span>
+            <span class="tag animate">Git / GitHub</span>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container">
+        <div class="contact-content animate">
+            <h2 style="margin-bottom: 20px;">Let's Build Something Great</h2>
+            <p style="margin-bottom: 30px;">Ready to discuss your next project or need technical consultation? Get in touch and let's explore how we can work together.</p>
+
+            <div class="contact-links">
+                <a href="mailto:ohiarenathanielmog@gmail.com" class="contact-link">
+                    <i class="fas fa-envelope"></i> ohiarenathanielmog@gmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/nathaniel-ohiare-61693b181/" target="_blank" class="contact-link">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/neomog" target="_blank" class="contact-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="tel:+2349036425748" class="contact-link">
+                    <i class="fas fa-phone"></i> +234 (9036) 425-748
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/nathaniel-ohiare-61693b181/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/neomog" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://x.com/OhiareNathaniel" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://medium.com/@nathanielohiare" target="_blank"><i class="fab fa-medium"></i></a>
+            </div>
+            <p>© <span id="year"></span> Ohiare Nathaniel — Software Engineer & Technology Consultant</p>
+            <p style="color: var(--gray); font-size: 0.9rem;">Specializing in Hospitality Tech, OTA Platforms & E-commerce Solutions</p>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle - Fixed version
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        if (mobileMenuBtn && navLinks) {
+            mobileMenuBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                navLinks.classList.toggle('active');
+                const icon = this.querySelector('i');
+                if (navLinks.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (navLinks.classList.contains('active') &&
+                    !navLinks.contains(e.target) &&
+                    !mobileMenuBtn.contains(e.target)) {
+                    navLinks.classList.remove('active');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                    document.body.style.overflow = '';
+                });
+            });
+
+            // Prevent clicks inside menu from closing it
+            navLinks.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        }
+
+        // Scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('section .section-header, .card, .tag').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.style.padding = '15px 0';
+                nav.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                nav.style.padding = '20px 0';
+                nav.style.boxShadow = 'none';
+            }
+        });
+
+        // Close mobile menu on window resize (if resized to desktop)
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Initialize animations on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Trigger initial animations
+            setTimeout(() => {
+                document.querySelectorAll('.animate').forEach((el, index) => {
+                    el.style.animationDelay = `${index * 0.1}s`;
+                });
+            }, 100);
+        });
+    </script>
+</body>
+</html>
